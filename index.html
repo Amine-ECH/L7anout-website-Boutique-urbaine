@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'7anout - Accueil</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+    
+    /* Navbar styling */
+    .navbar {
+      position: relative;
+      background-color: #1f3b2d; 
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      overflow: hidden;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+  .navbar::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("img/zalige.jpg");
+    background-repeat: repeat;
+    background-size: contain; 
+    opacity: 0.2; 
+    mix-blend-mode: multiply; 
+    z-index: 2;
+    pointer-events: none;
+  }
+
+    .navbar-brand {
+      font-weight: 700;
+    }
+    
+    .nav-link {
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffc107;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .logo-navbar {
+      height: 70px; 
+      max-height: 100%;
+      width: auto; 
+    }
+
+    
+    /* Hero section */
+    .hero-section {
+      height: 100vh;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1920/1080') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      background-image: url("img/l\'7anout_front.png");
+      justify-content: center;
+      position: relative;
+    }
+    
+    .hero-overlay {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 70px;
+      border-radius: 20px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      animation: fadeIn 1s ease;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .hero-overlay h1 {
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-overlay p {
+      margin-bottom: 30px;
+      font-size: 1.5rem;
+      font-weight: 300;
+    }
+    
+    .btn-warning {
+      padding: 12px 30px;
+      font-weight: 600;
+      border-radius: 50px;
+      border: none;
+      box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-warning:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5);
+    }
+    
+    /* About section */
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background-color: #1f3b2d;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+    
+    /* Products section */
+    .product-card {
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-card img {
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .product-card:hover img {
+      transform: scale(1.05);
+    }
+    
+    .card-body {
+      padding: 20px;
+    }
+    
+    .card-title {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .bg-light {
+      background-color: #f8f9fa !important;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #1f3b2d;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-overlay {
+        padding: 40px;
+        margin: 0 15px;
+      }
+      
+      .hero-overlay h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-overlay p {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/L'7anout-logo.png" alt="Logo" class="logo-navbar me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="apropos-L'7anout.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="produit-L'7anout.html">Produits</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-L'7anout.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay">
+      <h1 class="display-4 fw-bold">Bienvenue à L'<font color="red">7</font>anout</h1>
+      <p class="lead">Magasin urbain pour vos produits du quotidien</p>
+      <a href="produit-L'7anout.html" class="btn btn-warning btn-lg mt-3">
+        <i class="fas fa-shopping-basket me-2"></i>Voir nos produits
+      </a>
+    </div>
+  </section>
+
+  <!-- Présentation -->
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-lg-8 mx-auto text-center">
+        <h2 class="text-center section-title">À propos de nous</h2>
+        <p class="about-text col-md-10 mx-auto">L'7anout, c’est votre commerce urbain de confiance, là pour vous chaque jour avec le meilleur des produits : yaourts bien frais, biscuits gourmands, boissons qui font du bien… et bien plus encore. Le tout, simple, rapide, et toujours à côté de vous.</p>
+        <a href="apropos-L'7anout.html" class="btn btn-outline-success mt-3">En savoir plus</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produits vedettes -->
+  <section class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center section-title">Nos produits en vedette</h2>
+      <div class="row g-4">
+        <div class="col-md-3 col-sm-6">
+          <div class="card product-card">
+            <div class="overflow-hidden">
+              <img src="img/yaourts.png" class="card-img-top" alt="Yaourt">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Yaourt</h5>
+              <p class="text-muted">Produit frais local</p>
+              <a href="produit-L'7anout.html" class="btn btn-sm btn-outline-success">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card product-card">
+            <div class="overflow-hidden">
+              <img src="img/biscuits.png" class="card-img-top" alt="Biscuit">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Biscuit</h5>
+              <p class="text-muted">Fait maison</p>
+              <a href="produit-L'7anout.html" class="btn btn-sm btn-outline-success">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card product-card">
+            <div class="overflow-hidden">
+              <img src="img/juss.png" class="card-img-top" alt="Jus">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Jus</h5>
+              <p class="text-muted">Pressé du jour</p>
+              <a href="produit-L'7anout.html" class="btn btn-sm btn-outline-success">Voir détails</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card product-card">
+            <div class="overflow-hidden">
+              <img src="img/huile-d-olive-oued-souss-1l.jpg" class="card-img-top" alt="Huile">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">Huile</h5>
+              <p class="text-muted">100% naturelle</p>
+              <a href="produit-L'7anout.html" class="btn btn-sm btn-outline-success">Voir détails</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-5">
+        <a href="produit-L'7anout.html" class="btn btn-success">Voir tous nos produits</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Notre engagement -->
+  <section class="container py-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <img src="img/l'7anout_front.png" alt="Notre magasin" class="img-fluid rounded shadow">
+      </div>
+      <div class="col-md-6">
+        <h2 class="mb-4">Notre engagement</h2>
+        <p>Chez L'7anout, nous nous engageons à vous offrir :</p>
+        <ul class="list-group list-group-flush mb-4">
+          <li class="list-group-item d-flex align-items-center">
+            <i class="fas fa-check-circle text-success me-3"></i>
+            Des produits frais et de qualité
+          </li>
+          <li class="list-group-item d-flex align-items-center">
+            <i class="fas fa-check-circle text-success me-3"></i>
+            Un service client exceptionnel
+          </li>
+          <li class="list-group-item d-flex align-items-center">
+            <i class="fas fa-check-circle text-success me-3"></i>
+            Des prix abordables pour tous
+          </li>
+          <li class="list-group-item d-flex align-items-center">
+            <i class="fas fa-check-circle text-success me-3"></i>
+            Une ambiance chaleureuse et conviviale
+          </li>
+        </ul>
+        <a href="contact-L'7anout.html" class="btn btn-warning">Nous contacter</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-3">
+            <img src="img/L'7anout-logo.png" alt="Logo" height="50" class="me-2">
+            
+          </div>
+          <p>Votre épicerie de quartier, disponible tous les jours pour vous servir.</p>
+        </div>
+        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+          <h5 class="mb-3">Liens Rapides</h5>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="index.html" class="text-white">Accueil</a>
+            <a href="apropos-L'7anout.html" class="text-white">À propos</a>
+            <a href="produit-L'7anout.html" class="text-white">Produits</a>
+            <a href="contact-L'7anout.html" class="text-white">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <h5 class="mb-3">Suivez-nous</h5>
+          <div class="d-flex justify-content-center justify-content-lg-end gap-3">
+            <a href="https://www.facebook.com/?locale=fr_FR" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.whatsapp.com/?lang=fr_FR" class="text-white fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4" style="opacity: 0.1;">
+      <p class="mb-0 text-center">&copy; 2025 L'7anout. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="btn btn-success btn-floating" id="btn-back-to-top" style="position: fixed; bottom: 20px; right: 20px; display: none; width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Custom JS -->
+  <script>
+    // Back to top button
+    const mybutton = document.getElementById("btn-back-to-top");
+    
+    window.onscroll = function() {
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "flex";
+      } else {
+        mybutton.style.display = "none";
+      }
+    };
+    
+    mybutton.addEventListener("click", function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    });
+    
+    // Activate nav links on scroll
+    document.addEventListener("DOMContentLoaded", function() {
+      // Add active class to nav links based on scroll position
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+          navLinks.forEach(el => el.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

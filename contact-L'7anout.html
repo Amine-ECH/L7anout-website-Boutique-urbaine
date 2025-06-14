@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - L'7anout</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* donner la strecture por chaque partie  */
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+    }
+    .navbar {
+      position: relative;
+      background-color: #1f3b2d; 
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      overflow: hidden;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+
+  .navbar::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url("img/zalige.jpg");
+    background-repeat: repeat;
+    background-size: contain; 
+    opacity: 0.2; 
+    mix-blend-mode: multiply; 
+    z-index: 2;
+    pointer-events: none;
+  }
+    .navbar-brand {
+      font-weight: 700;
+    }
+    .nav-link {
+      font-weight: 500;
+      transition: all 0.3s ease;
+      margin: 0 5px;
+      position: relative;
+      color: white !important;
+    }
+    .nav-link:hover {
+      color: #ffc107 !important;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #ffc107;
+      bottom: 0;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .logo-navbar {
+      height: 70px;
+      max-height: 100%;
+      width: auto;
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      width: 70px;
+      height: 3px;
+      background-color: #1f3b2d;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    footer {
+      background-color: #1f3b2d;
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+    .contact-form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    }
+    .contact-info {
+      background-color: #1f3b2d;
+      color: white;
+      padding: 40px;
+      border-radius: 15px;
+      height: 100%;
+    }
+    .contact-icon {
+      font-size: 2rem;
+      color: #ffc107;
+      margin-bottom: 15px;
+    }
+    .form-control {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: #1f3b2d;
+    }
+    .btn-submit {
+      background-color: #1f3b2d;
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-submit:hover {
+      background-color: #ffc107;
+      color: #333;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    .info-item {
+      margin-bottom: 25px;
+    }
+    .info-item i {
+      margin-right: 10px;
+      color: #ffc107;
+    }
+    .map-container {
+      overflow: hidden;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      height: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="img/L'7anout-logo.png" alt="Logo" class="logo-navbar me-2">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="apropos-L'7anout.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="produit-L'7anout.html">Produits</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact-L'7anout.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-5 mt-5 text-center bg-light">
+    <div class="container">
+      <h1 class="display-5 fw-bold">Contactez-nous</h1>
+      <p class="lead">Nous sommes à votre écoute pour toute question ou suggestion</p>
+    </div>
+  </section>
+
+  <!-- Contact Form and Info -->
+  <section class="container py-5">
+    <div class="row">
+      <div class="col-lg-7 mb-5 mb-lg-0">
+        <div class="contact-form">
+          <h3 class="mb-4">Envoyez-nous un message</h3>
+          <form id="contactForm" action="#" method="POST">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Nom complet</label>
+                  <input type="text" class="form-control" id="name" placeholder="Votre nom" required>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="votre@email.com" required>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="subject" class="form-label">Sujet</label>
+              <input type="text" class="form-control" id="subject" placeholder="Sujet de votre message">
+            </div>
+            <div class="mb-4">
+              <label for="message" class="form-label">Message</label>
+              <textarea class="form-control" id="message" rows="5" placeholder="Votre message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">
+              <i class="fas fa-paper-plane me-2"></i>Envoyer le message
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="contact-info">
+          <h3 class="mb-4 text-white">Informations de contact</h3>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Fès, Maroc </span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-phone-alt"></i>
+            <span>+212 *** *** ***</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-envelope"></i>
+            <span>contact@l7anout.ma</span>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <span>Lun - Sam: 6h00 - 00h00<br>Dimanche: 9h00 - 23h00</span>
+          </div>
+          <div class="mt-4">
+            <h5 class="mb-3">Suivez-nous</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white fs-4"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+              <a href="#" class="text-white fs-4"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white fs-4"><i class="fab fa-whatsapp"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- FAQ Section -->
+  <section class="container py-5">
+    <h2 class="text-center section-title">Questions fréquentes</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="accordion mt-4" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                Quels sont vos horaires d'ouverture ?
+              </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Nous sommes ouverts du lundi au samedi de 8h00 à 20h00 et le dimanche de 6h00 à 00h00.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Proposez-vous un service de livraison ?
+              </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Oui, nous proposons un service de livraison pour les commandes de plus de 100 DH dans un rayon de 5km autour de notre magasin. Contactez-nous pour plus de détails.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                Quels moyens de paiement acceptez-vous ?
+              </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Nous acceptons les paiements en espèces, par carte bancaire et via les applications de paiement mobile.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                Proposez-vous des produits bio ?
+              </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                Oui, nous avons une section dédiée aux produits biologiques et locaux. N'hésitez pas à passer en magasin pour découvrir notre gamme de produits bio.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-light py-5 text-center">
+    <div class="container">
+      <h3 class="mb-4">Vous avez encore des questions ?</h3>
+      <p class="mb-4">Notre équipe est toujours prête à vous aider et à répondre à toutes vos questions.</p>
+      <div class="d-flex justify-content-center gap-3">
+        <a href="tel:+212522123456" class="btn btn-success">
+          <i class="fas fa-phone-alt me-2"></i>Nous appeler
+        </a>
+        <a href="mailto:contact@l7anout.ma" class="btn btn-outline-success">
+          <i class="fas fa-envelope me-2"></i>Nous écrire
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+          <div class="d-flex align-items-center justify-content-center justify-content-lg-start mb-3">
+            <img src="img/L'7anout-logo.png" alt="Logo" height="50" class="me-2">
+            
+          </div>
+          <p>Votre épicerie de quartier, disponible tous les jours pour vous servir.</p>
+        </div>
+        <div class="col-lg-4 text-center mb-4 mb-lg-0">
+          <h5 class="mb-3">Liens Rapides</h5>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="index.html" class="text-white">Accueil</a>
+            <a href="apropos-L'7anout.html" class="text-white">À propos</a>
+            <a href="produit-L'7anout.html" class="text-white">Produits</a>
+            <a href="contact-L'7anout.html" class="text-white">Contact</a>
+          </div>
+        </div>
+        <div class="col-lg-4 text-center text-lg-end">
+          <h5 class="mb-3">Suivez-nous</h5>
+          <div class="d-flex justify-content-center justify-content-lg-end gap-3">
+            <a href="https://www.facebook.com/?locale=fr_FR" class="text-white fs-5"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.instagram.com/accounts/login/" class="text-white fs-5"><i class="fab fa-instagram"></i></a>
+            <a href="https://x.com/" class="text-white fs-5"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.whatsapp.com/?lang=fr_FR" class="text-white fs-5"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="my-4" style="opacity: 0.1;">
+      <p class="mb-0 text-center">&copy; 2025 L'7anout. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Form Validation -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const contactForm = document.getElementById('contactForm');
+      
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validation de base
+        let valid = true;
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const message = document.getElementById('message');
+        
+        if (name.value.trim() === '') {
+          valid = false;
+          name.classList.add('is-invalid');
+        } else {
+          name.classList.remove('is-invalid');
+        }
+        
+        if (email.value.trim() === '' || !validateEmail(email.value)) {
+          valid = false;
+          email.classList.add('is-invalid');
+        } else {
+          email.classList.remove('is-invalid');
+        }
+        
+        if (message.value.trim() === '') {
+          valid = false;
+          message.classList.add('is-invalid');
+        } else {
+          message.classList.remove('is-invalid');
+        }
+        
+        if (valid) {
+          // Simulation d'envoi de formulaire
+          alert('Merci pour votre message ! Nous vous répondrons dans les plus brefs délais.');
+          contactForm.reset();
+        }
+      });
+      
+      function validateEmail(email) {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(String(email).toLowerCase());
+      }
+    });
+  </script>
+</body>
+</html>
